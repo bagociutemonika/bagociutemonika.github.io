@@ -1,0 +1,19 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Bagociute Monika"
+  navbar:
+    right:
+      - href: website.qmd
+        text: Home
+
+format:
+  html:
+    theme: default
+
+
+
+
+
