@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Monika B. — Interdisciplinary Researcher</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f3f0e8;
+      color: #171717;
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 18px;
+    }
+
+    .site {
+      max-width: 1400px;
+      margin: auto;
+      background: #f8f6f0;
+      border: 2px solid #171717;
+      border-radius: 28px;
+      overflow: hidden;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 28px;
+      border-bottom: 2px solid #171717;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    nav .logo {
+      font-weight: bold;
+    }
+
+    nav .links {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 70px 45px 85px;
+      border-bottom: 2px solid #171717;
+    }
+
+    .eyebrow {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 35px;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(70px, 13vw, 190px);
+      line-height: 0.82;
+      font-weight: normal;
+      letter-spacing: -0.07em;
+      max-width: 1100px;
+    }
+
+    .hero-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      margin-top: 65px;
+      align-items: end;
+    }
+
+    .statement {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(25px, 3vw, 43px);
+      line-height: 1.05;
+      max-width: 650px;
+    }
+
+    .intro {
+      max-width: 400px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* RESEARCH */
+
+    section {
+      padding: 70px 45px;
+      border-bottom: 2px solid #171717;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(45px, 7vw, 90px);
+      font-weight: normal;
+      letter-spacing: -0.05em;
+    }
+
+    .section-number {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 20px;
+    }
+
+    .research-card {
+      min-height: 360px;
+      padding: 30px;
+      border: 2px solid #171717;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .research-card.large {
+      background: #3657d6;
+      color: white;
+    }
+
+    .research-card.small {
+      background: #e8c95a;
+    }
+
+    .card-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .research-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(35px, 5vw, 65px);
+      line-height: 0.95;
+      font-weight: normal;
+      max-width: 650px;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .project {
+      min-height: 330px;
+      border: 2px solid #171717;
+      border-radius: 20px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project:nth-child(1) {
+      background: #d96b52;
+    }
+
+    .project:nth-child(2) {
+      background: #d7dce5;
+    }
+
+    .project:nth-child(3) {
+      background: #8eb6a1;
+    }
+
+    .project:nth-child(4) {
+      background: #c9a8d9;
+    }
+
+    .project h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 45px;
+      line-height: 0.95;
+      font-weight: normal;
+    }
+
+    .project p {
+      max-width: 400px;
+      line-height: 1.5;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      border: 1px solid #171717;
+      border-radius: 100px;
+      padding: 7px 12px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    /* METHODS */
+
+    .methods {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 50px;
+    }
+
+    .methods-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-content: start;
+    }
+
+    .method {
+      border: 2px solid #171717;
+      border-radius: 100px;
+      padding: 14px 20px;
+      font-size: 15px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+    }
+
+    .about-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 4vw, 55px);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .about-description {
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 500px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #171717;
+      color: #f8f6f0;
+      padding: 75px 45px;
+    }
+
+    .contact h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(55px, 10vw, 130px);
+      font-weight: normal;
+      line-height: 0.85;
+      letter-spacing: -0.06em;
+    }
+
+    .contact-links {
+      margin-top: 50px;
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 5px;
+    }
+
+    footer {
+      padding: 20px 28px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+
+      body {
+        padding: 8px;
+      }
+
+      nav {
+        padding: 18px;
+      }
+
+      nav .links {
+        display: none;
+      }
+
+      .hero,
+      section,
+      .contact {
+        padding: 50px 22px;
+      }
+
+      .hero-bottom,
+      .research-grid,
+      .projects,
+      .methods,
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-bottom {
+        gap: 35px;
+      }
+
+      .research-card,
+      .project {
+        min-height: 300px;
+      }
+
+      footer {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="site">
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="logo">MONIKA B.</div>
+
+    <div class="links">
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#methods">Methods</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="eyebrow">
+      Interdisciplinary Researcher · Data · People · Systems
+    </div>
+
+    <h1>
+      MONIKA<br>
+      B.
+    </h1>
+
+    <div class="hero-bottom">
+
+      <div class="statement">
+        I study how people learn, behave and make decisions — using research, data and statistical modelling.
+      </div>
+
+      <div class="intro">
+        My work sits at the intersection of research, quantitative methods and real-world questions.
+        I am particularly interested in education, health and markets — and in the methods that allow us
+        to understand complex human behaviour.
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- RESEARCH -->
+
+  <section id="research">
+
+    <div class="section-heading">
+      <h2>Research</h2>
+      <div class="section-number">01 / What I study</div>
+    </div>
+
+    <div class="research-grid">
+
+      <div class="research-card large">
+        <div class="card-label">Research direction</div>
+
+        <h3>
+          Understanding people through data.
+        </h3>
+
+        <div>
+          Education · Behaviour · Health · Markets
+        </div>
+      </div>
+
+      <div class="research-card small">
+
+        <div class="card-label">Current interests</div>
+
+        <h3>
+          Learning.<br>
+          Behaviour.<br>
+          Decisions.
+        </h3>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <div class="section-heading">
+      <h2>Projects</h2>
+      <div class="section-number">02 / Selected work</div>
+    </div>
+
+    <div class="projects">
+
+      <article class="project">
+
+        <div>
+          <div class="card-label">Project 01</div>
+
+          <h3>
+            Education & Learning
+          </h3>
+        </div>
+
+        <div>
+          <p>
+            Research project exploring learning, educational outcomes
+            and the factors that shape them.
+          </p>
+
+          <div class="tags">
+            <span class="tag">R</span>
+            <span class="tag">Regression</span>
+            <span class="tag">Education</span>
+          </div>
+        </div>
+
+      </article>
+
+
+      <article class="project">
+
+        <div>
+          <div class="card-label">Project 02</div>
+
+          <h3>
+            Health & Behaviour
+          </h3>
+        </div>
+
+        <div>
+          <p>
+            Quantitative research examining behaviour and health-related
+            questions through data.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Statistics</span>
+            <span class="tag">Survey</span>
+            <span class="tag">Health</span>
+          </div>
+        </div>
+
+      </article>
+
+
+      <article class="project">
+
+        <div>
+          <div class="card-label">Project 03</div>
+
+          <h3>
+            Markets & People
+          </h3>
+        </div>
+
+        <div>
+          <p>
+            Research into decisions, preferences and behaviour in
+            market and consumer contexts.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Data</span>
+            <span class="tag">Markets</span>
+          </div>
+        </div>
+
+      </article>
+
+
+      <article class="project">
+
+        <div>
+          <div class="card-label">Project 04</div>
+
+          <h3>
+            Methods & Models
+          </h3>
+        </div>
+
+        <div>
+          <p>
+            Experiments, statistical models and analytical approaches
+            for answering research questions.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Causal Inference</span>
+            <span class="tag">ML</span>
+            <span class="tag">Modelling</span>
+          </div>
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- METHODS -->
+
+  <section id="methods">
+
+    <div class="section-heading">
+      <h2>Methods</h2>
+      <div class="section-number">03 / How I work</div>
+    </div>
+
+    <div class="methods">
+
+      <div>
+        <p>
+          I am interested not only in what the data says,
+          but in choosing the right method for the question.
+        </p>
+      </div>
+
+      <div class="methods-list">
+
+        <span class="method">R</span>
+        <span class="method">Python</span>
+        <span class="method">Statistical Modelling</span>
+        <span class="method">Regression</span>
+        <span class="method">Causal Inference</span>
+        <span class="method">Machine Learning</span>
+        <span class="method">Survey Research</span>
+        <span class="method">Experimental Design</span>
+        <span class="method">Data Visualisation</span>
+        <span class="method">Quantitative Research</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="section-heading">
+      <h2>About</h2>
+      <div class="section-number">04 / A little context</div>
+    </div>
+
+    <div class="about">
+
+      <div class="about-text">
+        Researcher.<br>
+        Analyst.<br>
+        Curious human.
+      </div>
+
+      <div class="about-description">
+
+        <p>
+          I am an interdisciplinary researcher interested in using
+          data and research methods to understand people, behaviour
+          and the systems around us.
+        </p>
+
+        <br>
+
+        <p>
+          My interests move across disciplines rather than fitting
+          neatly into one box. Education is an important part of my
+          work, alongside questions from health, markets and other
+          areas where research can help explain how people think,
+          learn and make decisions.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact" class="contact">
+
+    <div class="section-number">05 / Contact</div>
+
+    <h2>
+      Let's<br>
+      talk.
+    </h2>
+
+    <div class="contact-links">
+
+      <a href="mailto:your-email@example.com">
+        Email
+      </a>
+
+      <a href="https://github.com/bagociutemonika">
+        GitHub
+      </a>
+
+      <a href="#">
+        LinkedIn
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    <span>Monika B.</span>
+
+    <span>Research · Data · People</span>
+
+  </footer>
+
+</div>
+
+</body>
+</html>
