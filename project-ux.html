@@ -45,7 +45,7 @@
       box-shadow: 0 24px 80px rgba(0,0,0,.18);
     }
 
-    .brand, .eyebrow, .micro, .text-link, .tags span {
+    .brand, .eyebrow, .micro, .text-link, .tags span, .kpi span {
       text-transform: uppercase;
       letter-spacing: .16em;
       font-size: 10px;
@@ -120,6 +120,16 @@
       letter-spacing: -.03em;
     }
 
+    .section .content h3 {
+      margin: 22px 0 8px;
+      font: 500 12px/1 "DM Sans", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+    }
+
+    .section .content h3:first-of-type { margin-top: 0; }
+
     .section .content p {
       margin: 0 0 16px;
       max-width: 620px;
@@ -135,10 +145,48 @@
       color: #383831;
     }
 
-    .section .content li { margin-bottom: 8px; }
+    .section .content li { margin-bottom: 6px; }
 
-    .reflection {
-      background: var(--paper-deep);
+    .kpi-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .kpi { border: 1px solid var(--line); padding: 8px 12px; font-size: 11px; letter-spacing: .04em; }
+
+    .reflection { background: var(--paper-deep); }
+
+    .link-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      border: 1.5px solid var(--ink);
+      padding: 18px 20px;
+      text-decoration: none;
+      color: var(--ink);
+      margin-bottom: 14px;
+      transition: background .2s ease;
+    }
+    .link-card:hover { background: var(--paper-deep); }
+
+    .link-card .lc-title {
+      font: 400 18px/1.2 "Playfair Display", Georgia, serif;
+      letter-spacing: -.02em;
+      margin: 0 0 4px;
+    }
+
+    .link-card .lc-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .placeholder-flag {
+      margin: 0 0 20px;
+      padding: 12px 16px;
+      border: 1.5px dashed var(--accent);
+      background: rgba(143,36,29,0.06);
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 500;
+      max-width: 620px;
     }
 
     .nextproj {
@@ -152,6 +200,7 @@
     @media (max-width: 700px) {
       .section { grid-template-columns: 1fr; gap: 14px; }
       .nextproj { flex-direction: column; align-items: flex-start; }
+      .link-card { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -179,65 +228,121 @@
     </header>
 
     <section class="section">
-      <p class="label">Context<span class="micro">The question</span></p>
+      <p class="label">Plan<span class="micro">Setting up the research</span></p>
       <div class="content">
         <h2>Could people understand what the platform was for, just by using it?</h2>
         <p>
-          The core idea was simple: give amateur artists, people without gallery
-          representation or an existing following, an easy way to find real-world
-          spaces, like cafes and small venues, willing to exhibit their work. But a
-          simple idea does not guarantee a clear interface. I needed to know whether
-          first-time visitors could understand the platform's purpose and navigate it
-          without guidance, before investing further in development.
+          The idea started with a simple observation: some cafes display local art,
+          others don't, even though many cafe managers said they'd be open to it if
+          approached. There was no real obstacle on their side, just no easy way for
+          artists and venues to find each other. The platform is designed to close
+          that gap, giving artists a way to get seen and sold, venues a low-effort way
+          to host art that can also attract customers, and eventually, customers a way
+          to discover and buy work directly. This first phase focuses on validating
+          the core communication loop between artists and venues.
+        </p>
+
+        <h3>Research goals</h3>
+        <p>
+          Validate whether both sides of the platform, artists and venue managers,
+          understand its purpose and can complete their core tasks without guidance,
+          before expanding to the customer-facing marketplace.
+        </p>
+
+        <h3>Research questions</h3>
+        <ul>
+          <li>Do artists understand how to create a profile and apply to a venue without guidance?</li>
+          <li>Do cafe managers understand how to browse, select, and approve an artist without guidance?</li>
+          <li>Where do each of these groups hesitate, get confused, or abandon the task?</li>
+          <li>Does the platform's value proposition come through clearly on first impression?</li>
+        </ul>
+
+        <h3>KPIs tracked</h3>
+        <div class="kpi-row">
+          <span class="kpi">Time on task</span>
+          <span class="kpi">Navigation vs. search usage</span>
+          <span class="kpi">User error rate</span>
+          <span class="kpi">Drop-off rate</span>
+          <span class="kpi">Conversion rate</span>
+          <span class="kpi">SUS</span>
+        </div>
+
+        <h3>Methodology</h3>
+        <p>
+          Moderated and unmoderated usability testing, using an unscripted,
+          exploratory approach. Participants were given the platform with minimal
+          framing and asked to think aloud as they explored, allowing natural points
+          of confusion to surface organically.
+        </p>
+
+        <h3>Participants</h3>
+        <p>
+          Six participants across two groups, matching the platform's two primary
+          user types: 2 cafe managers and 4 art school students. Testing with real
+          stakeholders from both sides, rather than general users, ensured the
+          findings reflected the actual people the platform is built for.
         </p>
       </div>
     </section>
 
     <section class="section">
-      <p class="label">Method<span class="micro">How I approached it</span></p>
+      <p class="label">Prototype<span class="micro">What was tested</span></p>
       <div class="content">
-        <h2>Moderated and unmoderated usability research</h2>
+        <h2>A low-fidelity, clickable prototype</h2>
         <p>
-          I ran moderated sessions with early users, observing them attempt core tasks
-          (understanding what the platform does, finding a venue, starting an
-          application) while thinking aloud, so I could see exactly where confusion
-          happened in real time. I paired this with unmoderated testing, letting other
-          users complete the same tasks independently, to check whether the issues I
-          observed held up without my presence influencing behaviour.
+          Rather than testing polished visuals, I built a deliberately plain,
+          structural prototype, grayscale, clearly labelled, no decoration, so that
+          testing measured whether the flow and structure made sense, not whether
+          the colours looked nice. It covers both core flows: an artist creating a
+          profile and applying to a venue, and a venue manager reviewing and
+          approving an application.
         </p>
-        <ul>
-          <li>Defined core tasks and a simple think-aloud protocol for moderated sessions</li>
-          <li>Ran unmoderated sessions to validate findings without facilitator influence</li>
-          <li>Recorded observations systematically across both formats</li>
-        </ul>
+        <a class="link-card" href="prototype/index.html" target="_blank" rel="noreferrer">
+          <div>
+            <p class="lc-title">Explore the prototype</p>
+            <p class="lc-sub">9 connected screens · artist flow + venue flow</p>
+          </div>
+          <span class="arrow" style="color: var(--accent); font-size: 20px;">→</span>
+        </a>
       </div>
     </section>
 
     <section class="section">
       <p class="label">Synthesis<span class="micro">Making sense of it</span></p>
       <div class="content">
-        <h2>Affinity diagramming to find the real patterns</h2>
+        <h2>Affinity diagramming across both user groups</h2>
         <p>
-          Rather than treating each observation in isolation, I clustered notes from
-          both moderated and unmoderated sessions using affinity diagramming, grouping
-          recurring friction points and confusions into themes. This made it possible
-          to separate one-off confusion from genuine, repeated usability issues worth
-          acting on.
+          I clustered observations from moderated and unmoderated sessions using
+          affinity diagramming, grouping recurring friction points by theme rather
+          than by participant, to separate one-off confusion from genuine, repeated
+          usability issues worth acting on.
         </p>
+        <a class="link-card" href="prototype/synthesis.html" target="_blank" rel="noreferrer">
+          <div>
+            <p class="lc-title">View the affinity diagram</p>
+            <p class="lc-sub">5 themes, clustered from 4 participants</p>
+          </div>
+          <span class="arrow" style="color: var(--accent); font-size: 20px;">→</span>
+        </a>
       </div>
     </section>
 
     <section class="section">
-      <p class="label">Outcome<span class="micro">What changed</span></p>
+      <p class="label">Outcome<span class="micro">From insight to decision</span></p>
       <div class="content">
-        <h2>From insight to iteration</h2>
+        <h2>Insights translated into recommendations</h2>
         <p>
-          The clustered findings directly shaped the next design iteration, which I
-          prototyped in Figma. I then followed up with further monitoring to see
-          whether the changes actually resolved the confusion observed in the first
-          round, closing the loop between research and design rather than treating
-          testing as a one-off checkbox.
+          Each finding was paired with a concrete recommendation and a decision on
+          whether to act on it now or defer it, since not every finding was within
+          scope for this first phase of the platform.
         </p>
+        <a class="link-card" href="prototype/insights.html" target="_blank" rel="noreferrer">
+          <div>
+            <p class="lc-title">View findings &amp; recommendations</p>
+            <p class="lc-sub">5 findings · what changed and what's next</p>
+          </div>
+          <span class="arrow" style="color: var(--accent); font-size: 20px;">→</span>
+        </a>
       </div>
     </section>
 
@@ -246,11 +351,12 @@
       <div class="content">
         <h2>Honest limitations</h2>
         <p>
-          This was a small, early-stage sample, not yet representative of the platform's
-          eventual two-sided audience (artists and venue owners), and I have so far
-          tested primarily one side of that relationship in depth. The next round
-          needs to bring venue owners into the same rigorous process, since their
-          understanding of the platform matters just as much as the artists'.
+          This was a small, early-stage sample, not yet representative of the
+          platform's eventual three-sided audience (artists, venues, and eventually
+          buyers), and the unscripted methodology, while good at surfacing organic
+          confusion, makes it harder to compare results consistently across
+          participants. The next round needs a larger sample and a lightweight task
+          structure to balance natural exploration with comparability.
         </p>
       </div>
     </section>
