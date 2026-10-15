@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synthesis — Affinity Diagram</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #191916;
+    --paper: #f3f0e8;
+    --board: #e9e4d9;
+    --muted: #66645d;
+    --line: rgba(25,25,22,0.3);
+    --accent: #8F241D;
+
+    --p1: #f4dca0;
+    --p1-ink: #5c4511;
+    --p2: #cfe3d6;
+    --p2-ink: #22513b;
+    --p3: #d9c9ec;
+    --p3-ink: #4a2d6b;
+    --p4: #f3c6c0;
+    --p4-ink: #7a2c23;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 30px;
+    background: #171715;
+    font-family: "DM Sans", Arial, sans-serif;
+    color: var(--ink);
+  }
+
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--paper);
+    border: 1px solid rgba(243,240,232,.5);
+    box-shadow: 0 24px 80px rgba(0,0,0,.18);
+  }
+
+  header {
+    padding: 34px;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--accent);
+    margin: 0 0 14px;
+  }
+
+  h1 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(28px, 4vw, 40px);
+    letter-spacing: -.03em;
+    margin: 0 0 12px;
+  }
+
+  header p {
+    max-width: 640px;
+    font: 400 14px/1.7 "Playfair Display", Georgia, serif;
+    color: #45443d;
+    margin: 0;
+  }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 18px 34px;
+    border-bottom: 1px solid var(--line);
+    font-size: 12px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,.2);
+  }
+
+  .board {
+    background: var(--board);
+    padding: 34px;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.08) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+
+  .cluster {
+    margin-bottom: 40px;
+  }
+
+  .cluster:last-child { margin-bottom: 0; }
+
+  .cluster-title {
+    font: 400 18px/1.2 "Playfair Display", Georgia, serif;
+    letter-spacing: -.02em;
+    margin: 0 0 4px;
+  }
+
+  .cluster-sub {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0 0 16px;
+  }
+
+  .notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .note {
+    width: 190px;
+    min-height: 130px;
+    padding: 14px;
+    font-size: 12.5px;
+    line-height: 1.45;
+    box-shadow: 2px 3px 6px rgba(0,0,0,.12);
+    transform: rotate(var(--rot, 0deg));
+    position: relative;
+  }
+
+  .note .who {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    margin-top: 10px;
+    opacity: .75;
+  }
+
+  .note.p1 { background: var(--p1); color: var(--p1-ink); }
+  .note.p2 { background: var(--p2); color: var(--p2-ink); }
+  .note.p3 { background: var(--p3); color: var(--p3-ink); }
+  .note.p4 { background: var(--p4); color: var(--p4-ink); }
+
+  .note:nth-child(4n+1) { --rot: -2deg; }
+  .note:nth-child(4n+2) { --rot: 1.5deg; }
+  .note:nth-child(4n+3) { --rot: -1deg; }
+  .note:nth-child(4n+4) { --rot: 2deg; }
+
+  .placeholder-flag {
+    margin: 0 34px 0;
+    padding: 14px 18px;
+    border: 1.5px dashed var(--accent);
+    background: rgba(143,36,29,0.06);
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  footer {
+    padding: 24px 34px 34px;
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <p class="eyebrow">Synthesis</p>
+      <h1>From raw observations to patterns</h1>
+      <p>Notes from moderated and unmoderated sessions with 4 participants, 2 cafe managers and 2 art school students, clustered by recurring theme rather than by participant.</p>
+    </header>
+
+    <div class="legend">
+      <div class="legend-item"><span class="swatch" style="background:var(--p1)"></span> P1 &middot; Cafe manager</div>
+      <div class="legend-item"><span class="swatch" style="background:var(--p2)"></span> P2 &middot; Cafe manager</div>
+      <div class="legend-item"><span class="swatch" style="background:var(--p3)"></span> P3 &middot; Art student</div>
+      <div class="legend-item"><span class="swatch" style="background:var(--p4)"></span> P4 &middot; Art student</div>
+    </div>
+
+    <p class="placeholder-flag">Draft placeholder content — illustrative of common patterns for this type of flow. Replace with real observations before using in an application.</p>
+
+    <div class="board">
+
+      <div class="cluster">
+        <h2 class="cluster-title">1 &middot; Value proposition unclear on first look</h2>
+        <p class="cluster-sub">Both sides hesitated to say what the platform does, before clicking anything</p>
+        <div class="notes">
+          <div class="note p1">"Is this like Instagram for cafes, or more like a booking site?"<span class="who">P1</span></div>
+          <div class="note p3">Paused on the home screen for a few seconds before choosing a role<span class="who">P3</span></div>
+          <div class="note p4">"I wasn't sure if I was signing up to sell art or just display it"<span class="who">P4</span></div>
+        </div>
+      </div>
+
+      <div class="cluster">
+        <h2 class="cluster-title">2 &middot; Uncertainty about commitment and cost</h2>
+        <p class="cluster-sub">Venue side wanted to know what they were agreeing to before browsing further</p>
+        <div class="notes">
+          <div class="note p1">"Do I have to pay to list my cafe, or does the artist pay?"<span class="who">P1</span></div>
+          <div class="note p2">Looked for a pricing or terms link that wasn't there<span class="who">P2</span></div>
+          <div class="note p2">"I'd want to know what happens if the art doesn't sell"<span class="who">P2</span></div>
+        </div>
+      </div>
+
+      <div class="cluster">
+        <h2 class="cluster-title">3 &middot; Portfolio quality and trust</h2>
+        <p class="cluster-sub">Venue managers wanted more confidence before approving someone</p>
+        <div class="notes">
+          <div class="note p1">"Three photos isn't enough for me to judge if their work fits my space"<span class="who">P1</span></div>
+          <div class="note p2">Wanted to see where else the artist had exhibited before<span class="who">P2</span></div>
+          <div class="note p4">Uploaded only one photo during testing, unprompted to add more<span class="who">P4</span></div>
+        </div>
+      </div>
+
+      <div class="cluster">
+        <h2 class="cluster-title">4 &middot; Navigation habits</h2>
+        <p class="cluster-sub">How people actually moved through the browse screen</p>
+        <div class="notes">
+          <div class="note p3">Scrolled through all listed venues rather than using search<span class="who">P3</span></div>
+          <div class="note p4">Also browsed by scrolling; did not notice the search tab at all<span class="who">P4</span></div>
+          <div class="note p1">Used the tabs confidently when reviewing applications<span class="who">P1</span></div>
+        </div>
+      </div>
+
+      <div class="cluster">
+        <h2 class="cluster-title">5 &middot; The approval flow felt too quick</h2>
+        <p class="cluster-sub">A one-tap approval raised questions about safeguards</p>
+        <div class="notes">
+          <div class="note p2">"One tap feels fast, how do I undo this if I change my mind?"<span class="who">P2</span></div>
+          <div class="note p1">Hesitated before pressing approve, double-checked the artist's name first<span class="who">P1</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      <p style="font-size:12px; color:var(--muted); max-width:640px;">
+        Five recurring themes emerged across both participant groups. Themes 1 and 3 directly
+        informed the next design iteration; themes 2 and 5 are flagged for a future round,
+        since they touch business logic not yet built in this first phase.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
