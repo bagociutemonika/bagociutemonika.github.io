@@ -48,7 +48,6 @@
       box-shadow: 0 24px 80px rgba(0,0,0,.18);
     }
 
-    /* Shared small type */
     .brand, .nav-links a, .eyebrow, .section-meta, .micro, .text-link, .project-tags span {
       text-transform: uppercase;
       letter-spacing: .16em;
@@ -56,7 +55,6 @@
       font-weight: 500;
     }
 
-    /* Navigation */
     .nav {
       min-height: 72px;
       display: flex;
@@ -85,7 +83,6 @@
     .text-link .arrow { font-size: 19px; line-height: 1; letter-spacing: 0; color: var(--accent); transition: transform .2s ease; }
     .text-link:hover .arrow { transform: translateX(5px); }
 
-    /* Hero */
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
@@ -115,8 +112,6 @@
 
     .short-rule { width: 24px; height: 1px; background: var(--ink); margin-bottom: 10px; }
 
-
-    /* Shared sections */
     .section { border-bottom: 1px solid var(--ink); }
 
     .section-bar {
@@ -132,7 +127,6 @@
     .section-meta span:first-child { color: var(--accent); }
     .section-action { margin: 0; }
 
-    /* Theme filter */
     .themes {
       display: flex;
       flex-wrap: wrap;
@@ -157,7 +151,6 @@
     .themes button:hover { border-color: var(--accent); }
     .themes button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 
-    /* Projects */
     .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); overflow: hidden; }
     .project[hidden] { display: none; }
 
@@ -195,7 +188,6 @@
 
     .project .text-link { margin-top: auto; padding-top: 22px; }
 
-    /* Skills and methods */
     .methods { padding: 30px 34px 36px; display: grid; grid-template-columns: .8fr 1.5fr; gap: 45px; }
 
     .methods h3 { margin: 0; font: 400 clamp(28px, 4vw, 48px)/1 "Playfair Display", Georgia, serif; letter-spacing: -.05em; }
@@ -209,7 +201,6 @@
     .method-list { display: flex; flex-wrap: wrap; gap: 8px; }
     .method-list span { border: 1px solid var(--line); border-radius: 999px; padding: 8px 13px; font-size: 11px; letter-spacing: .04em; }
 
-    /* Experience */
     .cv { display: grid; grid-template-columns: 1.4fr 1fr; }
     .cv-col { padding: 30px 34px 36px; }
     .cv-col + .cv-col { border-left: 1px solid var(--line); }
@@ -222,7 +213,6 @@
 
     .service { margin-top: 26px; }
 
-    /* About */
     .about { display: grid; grid-template-columns: 1fr 1fr .7fr; min-height: 390px; }
     .about-copy { padding: 32px 34px; display: flex; flex-direction: column; align-items: flex-start; }
     .about-copy .eyebrow { margin: 0; }
@@ -235,7 +225,6 @@
     .quote-copy { padding: 28px; }
     .quote-copy blockquote { margin: 12px 0 0; font: italic 400 clamp(23px, 2.7vw, 34px)/1.12 "Playfair Display", Georgia, serif; letter-spacing: -.04em; }
 
-    /* Contact and footer */
     .contact { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; padding: 40px 34px; background: var(--ink); color: var(--paper); }
     .contact h2 { margin: 20px 0 0; font: 400 clamp(52px, 8vw, 100px)/.85 "Playfair Display", Georgia, serif; letter-spacing: -.07em; }
     .contact .eyebrow { margin: 0; }
@@ -245,7 +234,6 @@
 
     footer { display: flex; justify-content: space-between; gap: 20px; padding: 17px 34px; font-size: 9px; text-transform: uppercase; letter-spacing: .14em; }
 
-    /* Responsive */
     @media (min-width: 1500px) { body { padding: 42px; } }
 
     @media (max-width: 900px) {
@@ -331,7 +319,7 @@
           <h1>Monika<br>Bagociuté</h1>
 
           <p class="hero-description">
-            A skillful statistician within social and biomedical sciences, yet as a researcher highly interested in educational research, AI, and women’s health. I carry a high appreciation for elegant visuals, and my work inevitably reflects my style.
+            A skillful statistician within social and biomedical sciences, yet as a researcher highly interested in educational research, AI, and women's health. I carry a high appreciation for elegant visuals, and my work inevitably reflects my style.
           </p>
 
           <a class="text-link" href="#projects">
@@ -356,15 +344,39 @@
         <div class="themes" role="group" aria-label="Filter projects by theme">
           <span class="micro">Filter</span>
           <button type="button" data-theme="all" aria-pressed="true">All</button>
+          <button type="button" data-theme="ux" aria-pressed="false">UX</button>
           <button type="button" data-theme="education" aria-pressed="false">Education</button>
           <button type="button" data-theme="psychometrics" aria-pressed="false">Psychometrics</button>
           <button type="button" data-theme="health" aria-pressed="false">Health</button>
-          <button type="button" data-theme="ai" aria-pressed="false">AI</button>
         </div>
 
-        <!-- The four figures below are illustrations drawn in code.
-             Replace each <svg> with <img src="your-plot.png" alt="..."> once you have real plots from each project. -->
         <div class="projects">
+
+          <article class="project" data-themes="ux">
+            <div class="figure">
+              <svg viewBox="0 0 400 250" role="img" aria-label="Illustration of clustered sticky notes representing affinity diagramming">
+                <path class="axis" d="M30 20V220H380"/>
+                <g class="ink">
+                  <rect x="55" y="60" width="50" height="40"/>
+                  <rect x="115" y="50" width="50" height="40"/>
+                  <rect x="85" y="110" width="50" height="40"/>
+                </g>
+                <g class="acc">
+                  <rect x="230" y="70" width="50" height="40"/>
+                  <rect x="290" y="95" width="50" height="40"/>
+                  <rect x="250" y="140" width="50" height="40"/>
+                </g>
+                <path class="axis" d="M30 190H370" stroke-dasharray="4 4"/>
+              </svg>
+            </div>
+            <div class="project-copy">
+              <p class="eyebrow project-label">Project 01 <span>· 2025 – present</span></p>
+              <h3>Designing for discovery: a platform for amateur artists</h3>
+              <p class="desc">An independent product project connecting amateur artists with venues, such as cafes, to exhibit their work. I own the concept and development, and conduct moderated and unmoderated usability research with early users. I synthesise observations using affinity diagramming and prototype design iterations in Figma based on what I learn.</p>
+              <div class="project-tags"><span>Usability testing</span><span>Affinity diagramming</span><span>Figma</span><span>Product design</span></div>
+              <a class="text-link" href="https://github.com/bagociutemonika" target="_blank" rel="noreferrer"><span class="arrow">→</span> View project</a>
+            </div>
+          </article>
 
           <article class="project" data-themes="education">
             <div class="figure">
@@ -376,15 +388,15 @@
               </svg>
             </div>
             <div class="project-copy">
-              <p class="eyebrow project-label">Project 01 <span>· 2025 – present</span></p>
+              <p class="eyebrow project-label">Project 02 <span>· 2025 – present</span></p>
               <h3>Evaluating bilingual education programmes</h3>
-              <p class="desc">Lead researcher at Nuffic studying language skills, personal development and global citizenship across 20+ schools. I built and piloted the questionnaire, ran power simulations to set the sample size, and analyse the results with multilevel models.</p>
+              <p class="desc">Lead researcher at Nuffic studying language skills, personal development and global citizenship across 20+ schools. I built and piloted the questionnaire, ran power simulations to set the sample size, and apply t-tests, ANOVA and multilevel models to evaluate outcomes and inform decisions.</p>
               <div class="project-tags"><span>Multilevel modelling</span><span>Questionnaire design</span><span>Power simulation</span><span>Power BI</span></div>
               <a class="text-link" href="https://github.com/bagociutemonika" target="_blank" rel="noreferrer"><span class="arrow">→</span> View project</a>
             </div>
           </article>
 
-          <article class="project" data-themes="psychometrics ai">
+          <article class="project" data-themes="psychometrics">
             <div class="figure">
               <svg viewBox="0 0 400 250" role="img" aria-label="Illustration of two item characteristic curves, one shifted to show differential item functioning">
                 <path class="axis" d="M30 20V220H380"/>
@@ -393,27 +405,10 @@
               </svg>
             </div>
             <div class="project-copy">
-              <p class="eyebrow project-label">Project 02 <span>· 2025 – 2026</span></p>
+              <p class="eyebrow project-label">Project 03 <span>· 2025 – 2026</span></p>
               <h3>Detecting item drift in large-scale assessments</h3>
-              <p class="desc">A simulation study modelled on PISA-style assessments. I generated data under Rasch and 2PL models, injected differential item functioning, and compared machine learning with logistic regression for detecting it. Related to my MSc thesis at Utrecht University.</p>
+              <p class="desc">Data analyst intern at CITO. I designed a simulation study modelled on PISA-style assessments, generating data under Rasch and 2PL models, injecting differential item functioning, and benchmarking machine learning against logistic regression to determine the most reliable detection method. Related to my MSc thesis at Utrecht University.</p>
               <div class="project-tags"><span>IRT</span><span>DIF</span><span>Simulation</span><span>Machine learning</span></div>
-              <a class="text-link" href="https://github.com/bagociutemonika" target="_blank" rel="noreferrer"><span class="arrow">→</span> View project</a>
-            </div>
-          </article>
-
-          <article class="project" data-themes="education ai">
-            <div class="figure">
-              <svg viewBox="0 0 400 250" role="img" aria-label="Illustration of a scatter plot with an upward trend line">
-                <path class="axis" d="M30 20V220H380"/>
-                <g class="dot"><circle cx="60" cy="190" r="4.5"/><circle cx="90" cy="170" r="4.5"/><circle cx="110" cy="185" r="4.5"/><circle cx="140" cy="150" r="4.5"/><circle cx="165" cy="160" r="4.5"/><circle cx="190" cy="130" r="4.5"/><circle cx="215" cy="120" r="4.5"/><circle cx="240" cy="125" r="4.5"/><circle cx="270" cy="95" r="4.5"/><circle cx="300" cy="100" r="4.5"/><circle cx="325" cy="70" r="4.5"/><circle cx="355" cy="60" r="4.5"/></g>
-                <path class="acc" d="M45 195L370 55"/>
-              </svg>
-            </div>
-            <div class="project-copy">
-              <p class="eyebrow project-label">Project 03 <span>· 2024</span></p>
-              <h3>Writing with ChatGPT in bilingual secondary education</h3>
-              <p class="desc">My MSc thesis at the University of Amsterdam. A mixed-methods study of how the quality of students’ texts relates to what they learn when they write with ChatGPT.</p>
-              <div class="project-tags"><span>Mixed methods</span><span>Education</span><span>AI</span></div>
               <a class="text-link" href="https://github.com/bagociutemonika" target="_blank" rel="noreferrer"><span class="arrow">→</span> View project</a>
             </div>
           </article>
@@ -431,7 +426,7 @@
             <div class="project-copy">
               <p class="eyebrow project-label">Project 04 <span>· 2023</span></p>
               <h3>Online intervention for depression in older adults</h3>
-              <p class="desc">Part of an experimental study with the Research Council of Lithuania and Vilnius University. I ran the multilevel analysis and data imputation, wrote the results section for journal submission, and presented the methods at a psychology conference in Klaipėda (2024).</p>
+              <p class="desc">Research scholar with the Research Council of Lithuania and Vilnius University. I built the statistical analysis pipeline to assess the effectiveness of an online therapy product, ran multilevel analysis and data imputation, and presented the results at a psychology conference in Klaipėda (2024).</p>
               <div class="project-tags"><span>Multilevel analysis</span><span>Data imputation</span><span>Experimental design</span></div>
               <a class="text-link" href="https://github.com/bagociutemonika" target="_blank" rel="noreferrer"><span class="arrow">→</span> View project</a>
             </div>
@@ -466,7 +461,7 @@
             </div>
             <div class="skill-group">
               <span class="micro">Tools</span>
-              <div class="method-list"><span>Git</span><span>Quarto</span><span>LaTeX</span><span>Shiny</span></div>
+              <div class="method-list"><span>Git</span><span>Quarto</span><span>LaTeX</span><span>Shiny</span><span>Figma</span></div>
             </div>
             <div class="skill-group">
               <span class="micro">Design</span>
@@ -484,7 +479,6 @@
         <div class="section-bar">
           <p class="section-meta"><span>04</span><span>Experience &amp; education</span></p>
 
-          <!-- Upload your CV to the repository and keep this file name, or change the link. -->
           <a class="text-link section-action" href="Monika_Bagociute_CV.pdf" target="_blank" rel="noreferrer">
             Download CV <span class="arrow">→</span>
           </a>
@@ -499,12 +493,12 @@
               <div><strong>Lead researcher</strong><span class="org">Nuffic, The Hague</span></div>
             </div>
             <div class="cv-row">
-              <span class="when">Sep 2025 – Jun 2026</span>
-              <div><strong>Data analyst intern</strong><span class="org">CITO, Arnhem</span></div>
+              <span class="when">May 2025 – now</span>
+              <div><strong>UX researcher, independent project</strong><span class="org">Amsterdam</span></div>
             </div>
             <div class="cv-row">
-              <span class="when">Jan – May 2025</span>
-              <div><strong>Student assistant, literature review</strong><span class="org">University of Amsterdam</span></div>
+              <span class="when">Sep 2025 – Jun 2026</span>
+              <div><strong>Data analyst intern</strong><span class="org">CITO, Arnhem</span></div>
             </div>
             <div class="cv-row">
               <span class="when">Jul – Aug 2023</span>
@@ -527,6 +521,10 @@
               <span class="when">2019 – 2022</span>
               <div><strong>BSc Psychology</strong><span class="org">Université Grenoble Alpes</span></div>
             </div>
+            <div class="cv-row">
+              <span class="when">Oct 2026</span>
+              <div><strong>Conduct UX Research</strong><span class="org">Google</span></div>
+            </div>
 
             <div class="service">
               <p class="micro">Academic service</p>
@@ -546,7 +544,7 @@
           <h2>Curious about people, evidence and impact.</h2>
 
           <p>
-            I am an interdisciplinary researcher with a background in psychology and education, and a growing focus on psychometrics and statistical modelling. I enjoy working across disciplines and asking how evidence can contribute to fairer, healthier and more inclusive outcomes.
+            I am an interdisciplinary researcher with a background in psychology and education, and a growing focus on psychometrics, statistical modelling, and applying that same rigor to product and user research. I enjoy working across disciplines and asking how evidence can contribute to fairer, healthier and more inclusive outcomes.
           </p>
 
           <a class="text-link" href="mailto:monikabagociute@gmail.com">
@@ -565,7 +563,7 @@
 
           <div class="quote-copy">
             <div class="short-rule"></div>
-            <blockquote>“Better questions for more inclusive futures.”</blockquote>
+            <blockquote>"Better questions for more inclusive futures."</blockquote>
 
             <a class="text-link" href="#contact"><span class="arrow">→</span> Contact</a>
           </div>
@@ -581,7 +579,6 @@
         <div class="contact-links">
           <a href="mailto:monikabagociute@gmail.com">Email</a>
           <a href="https://github.com/bagociutemonika" target="_blank" rel="noreferrer">GitHub</a>
-          <!-- Replace # with your LinkedIn profile URL -->
           <a href="#">LinkedIn</a>
         </div>
       </section>
