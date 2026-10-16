@@ -211,6 +211,15 @@
       .nextproj { flex-direction: column; align-items: flex-start; }
       .framework-table { font-size: 11px; }
     }
+
+.section .content { min-width: 0; }
+.figure-block.figure-wide { max-width: none; width: calc(100% + 260px); margin-left: -260px; }
+.fm-scroll { overflow-x: auto; }
+.figure-block.figure-wide img { border: 0; background: transparent; min-width: 760px; }
+@media (max-width: 700px) {
+  .figure-block.figure-wide { width: 100%; margin-left: 0; }
+}
+    
   </style>
 </head>
 
@@ -338,26 +347,16 @@
           <div class="pillar"><b>Global Citizenship</b> &middot; self-efficacy, perspective-taking, intercultural communication, global mindedness</div>
         </div>
 
-        <div class="figure-block">
-          <svg viewBox="0 0 740 320" role="img" aria-label="Factor model showing three latent constructs measured through grouped questionnaire items">
-            <ellipse cx="120" cy="60" rx="95" ry="36" fill="none" stroke="#8F241D" stroke-width="2"/>
-            <text x="120" y="65" font-family="DM Sans, Arial" font-size="13.5" font-weight="600" fill="#8F241D" text-anchor="middle">Language</text>
-            <ellipse cx="370" cy="60" rx="115" ry="36" fill="none" stroke="#8F241D" stroke-width="2"/>
-            <text x="370" y="65" font-family="DM Sans, Arial" font-size="13.5" font-weight="600" fill="#8F241D" text-anchor="middle">Personal Development</text>
-            <ellipse cx="620" cy="60" rx="110" ry="36" fill="none" stroke="#8F241D" stroke-width="2"/>
-            <text x="620" y="65" font-family="DM Sans, Arial" font-size="13.5" font-weight="600" fill="#8F241D" text-anchor="middle">Global Citizenship</text>
-            <rect x="72" y="220" width="96" height="40" fill="none" stroke="#191916" stroke-width="1.5"/>
-            <text x="120" y="244" font-family="DM Sans, Arial" font-size="12" text-anchor="middle" fill="#191916">Q1&#8211;Q16</text>
-            <line x1="120" y1="96" x2="120" y2="220" stroke="#191916" stroke-width="1.2"/>
-            <rect x="322" y="220" width="96" height="40" fill="none" stroke="#191916" stroke-width="1.5"/>
-            <text x="370" y="244" font-family="DM Sans, Arial" font-size="12" text-anchor="middle" fill="#191916">Q17&#8211;Q27</text>
-            <line x1="370" y1="96" x2="370" y2="220" stroke="#191916" stroke-width="1.2"/>
-            <rect x="572" y="220" width="96" height="40" fill="none" stroke="#191916" stroke-width="1.5"/>
-            <text x="620" y="244" font-family="DM Sans, Arial" font-size="12" text-anchor="middle" fill="#191916">Q28&#8211;Q37</text>
-            <line x1="620" y1="96" x2="620" y2="220" stroke="#191916" stroke-width="1.2"/>
-            <text x="370" y="310" font-family="Playfair Display, Georgia" font-size="12" fill="#66645d" text-anchor="middle" font-style="italic">Latent constructs (ovals) measured through grouped questionnaire items (boxes)</text>
-          </svg>
-        </div>
+       <div class="figure-block figure-wide">
+  <div class="fm-scroll">
+    <img src="factor-model.svg"
+         alt="Factor model: three correlated latent domains (Language, Personal Development, Global Citizenship), each made up of first-order factors measured by grouped questionnaire items Q1 to Q37">
+  </div>
+  <p class="figure-caption">
+    Three correlated latent domains (ovals), each made up of first-order factors
+    (circles) measured through grouped questionnaire items (boxes).
+  </p>
+</div>
 
         <h3>Development process</h3>
         <ul>
