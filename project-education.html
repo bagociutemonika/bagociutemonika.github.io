@@ -36,6 +36,7 @@
 
     a { color: inherit; }
     :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    img { display: block; max-width: 100%; height: auto; }
 
     .site {
       max-width: var(--page-width);
@@ -45,7 +46,7 @@
       box-shadow: 0 24px 80px rgba(0,0,0,.18);
     }
 
-    .brand, .eyebrow, .micro, .text-link, .tags span {
+    .brand, .eyebrow, .micro, .text-link, .tags span, .kpi span {
       text-transform: uppercase;
       letter-spacing: .16em;
       font-size: 10px;
@@ -86,15 +87,15 @@
     .hero h1 {
       margin: 0;
       font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(36px, 6vw, 64px);
-      line-height: 1.05;
+      font-size: clamp(32px, 5.5vw, 56px);
+      line-height: 1.08;
       letter-spacing: -.03em;
       font-weight: 400;
       max-width: 820px;
     }
 
     .hero .dek {
-      max-width: 640px;
+      max-width: 660px;
       margin: 24px 0 0;
       font: 400 16px/1.8 "Playfair Display", Georgia, serif;
       color: #383831;
@@ -116,13 +117,23 @@
 
     .section .content h2 {
       margin: 0 0 16px;
-      font: 400 clamp(24px, 3vw, 32px)/1.1 "Playfair Display", Georgia, serif;
+      font: 400 clamp(22px, 2.8vw, 30px)/1.15 "Playfair Display", Georgia, serif;
       letter-spacing: -.03em;
     }
 
+    .section .content h3 {
+      margin: 22px 0 8px;
+      font: 500 12px/1 "DM Sans", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+    }
+
+    .section .content h3:first-of-type { margin-top: 0; }
+
     .section .content p {
       margin: 0 0 16px;
-      max-width: 620px;
+      max-width: 640px;
       font: 400 15px/1.8 "Playfair Display", Georgia, serif;
       color: #383831;
     }
@@ -130,12 +141,60 @@
     .section .content ul {
       margin: 0 0 16px;
       padding-left: 20px;
-      max-width: 620px;
+      max-width: 640px;
       font: 400 15px/1.8 "Playfair Display", Georgia, serif;
       color: #383831;
     }
 
-    .section .content li { margin-bottom: 8px; }
+    .section .content li { margin-bottom: 6px; }
+
+    .framework-table {
+      width: 100%;
+      max-width: 700px;
+      border-collapse: collapse;
+      margin: 0 0 20px;
+      font-size: 12.5px;
+    }
+    .framework-table th, .framework-table td {
+      text-align: left;
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    .framework-table th {
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .pillar-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .pillar { border: 1px solid var(--line); padding: 10px 14px; font-size: 12px; letter-spacing: .02em; }
+    .pillar b { color: var(--accent); }
+
+    .figure-block { margin: 0 0 28px; max-width: 700px; }
+    .figure-block img { border: 1px solid var(--line); background: #fff; }
+    .figure-caption { margin-top: 10px; font-size: 12px; line-height: 1.6; color: var(--muted); max-width: 620px; }
+
+    .finding-box {
+      background: var(--paper-deep);
+      border-left: 2px solid var(--accent);
+      padding: 16px 18px;
+      margin: 0 0 20px;
+      max-width: 620px;
+    }
+    .finding-box p { margin: 0; }
+
+    .data-note {
+      margin: 0 0 20px;
+      padding: 12px 16px;
+      border: 1.5px dashed var(--muted);
+      background: rgba(102,100,93,0.06);
+      font-size: 12px;
+      color: var(--muted);
+      max-width: 620px;
+    }
 
     .reflection { background: var(--paper-deep); }
 
@@ -150,6 +209,7 @@
     @media (max-width: 700px) {
       .section { grid-template-columns: 1fr; gap: 14px; }
       .nextproj { flex-direction: column; align-items: flex-start; }
+      .framework-table { font-size: 11px; }
     }
   </style>
 </head>
@@ -162,93 +222,169 @@
     </nav>
 
     <header class="hero">
-      <p class="eyebrow">Project 02 · Education Research · 2025 – present</p>
+      <p class="eyebrow">Project 02 · Education Research · Nuffic · 2025 – present</p>
       <h1>Evaluating bilingual education programmes</h1>
       <p class="dek">
-        As Lead Researcher at Nuffic, I designed and now run a large-scale evaluation of
-        bilingual education outcomes across more than 20 schools, covering language
-        skills, personal development, and global citizenship.
+        As Lead Researcher at Nuffic, I design and run a large-scale evaluation of
+        bilingual education (TTO) outcomes across more than 20 schools, covering
+        language skills, personal development, and global citizenship, from
+        synthesising existing school frameworks through to questionnaire design,
+        piloting, and statistical validation.
       </p>
       <div class="tags">
-        <span>Questionnaire design</span><span>Power simulation</span>
-        <span>Stratified sampling</span><span>Multilevel modelling</span><span>Power BI</span>
+        <span>Questionnaire design</span><span>Framework synthesis</span>
+        <span>Cronbach's alpha</span><span>Stratified sampling</span><span>R</span>
       </div>
     </header>
 
     <section class="section">
-      <p class="label">Context<span class="micro">The question</span></p>
+      <p class="label">Background<span class="micro">The question</span></p>
       <div class="content">
-        <h2>Is bilingual education delivering on its three core promises?</h2>
+        <h2>What are the intended and unintended outcomes of bilingual education?</h2>
         <p>
-          Nuffic needed credible, programme-level evidence on whether bilingual
-          secondary education in the Netherlands actually improves language skills,
-          personal development, and global citizenship, not just whether schools
-          believed it did. That meant building a measurement approach from scratch,
-          one that could be trusted across more than 20 different schools with
-          different student populations.
+          In the Netherlands, 127 schools currently implement bilingual (TTO)
+          education. The TTO framework asks schools to address three core areas,
+          language, personal development, and global citizenship, but each school
+          has room to interpret and implement these in its own way. Before
+          measuring outcomes, I needed to understand what schools were actually
+          aiming for in practice, not just on paper.
         </p>
       </div>
     </section>
 
     <section class="section">
-      <p class="label">Method<span class="micro">How I approached it</span></p>
+      <p class="label">Synthesis<span class="micro">Making sense of 62 schools</span></p>
       <div class="content">
-        <h2>Building, testing, and validating a custom instrument</h2>
+        <h2>Finding the shared constructs behind different frameworks</h2>
         <p>
-          I constructed and piloted a questionnaire (<em>n</em> = 100) to establish
-          internal consistency and reliability before full deployment, drawing on
-          established frameworks, including the IB Learner Profile, to operationalise
-          personal development. I ran power simulation studies to determine the
-          sample size needed, then recruited more than 20 schools using a stratified
-          sampling strategy to ensure the final sample fairly represented different
-          school types.
+          I reviewed policy documents from 62 TTO schools to see which frameworks
+          they referenced for personal development. The results were fragmented:
+          48% used their own, informally developed approach, 26% referenced the IB
+          Learner Profile, with the remainder split across Global Citizenship,
+          21st Century Skills, LOB, Cambridge, and UNESCO frameworks.
         </p>
+        <p>
+          Rather than picking one framework and ignoring the rest, I mapped where
+          these frameworks actually overlapped conceptually, treating this like a
+          synthesis task: many different sources, in different language, pointing
+          at a smaller set of recurring underlying constructs.
+        </p>
+        <table class="framework-table">
+          <tr><th>Common theme</th><th>IB</th><th>21st Century Skills</th><th>Cambridge</th><th>UNESCO</th></tr>
+          <tr><td>Critical &amp; reflective thinking</td><td>Thinkers, Reflective</td><td>Critical thinking</td><td>Reflective, innovative</td><td>Self-awareness, holistic development</td></tr>
+          <tr><td>Communication &amp; collaboration</td><td>Communicators, open-minded, caring</td><td>Communication, collaboration</td><td>Engaged</td><td>Community involvement</td></tr>
+          <tr><td>Creativity &amp; inquiry</td><td>Inquirers, risk-takers</td><td>Creativity</td><td>Innovative, confident</td><td>Freedom, holistic</td></tr>
+          <tr><td>Ethics &amp; responsibility</td><td>Principled, caring</td><td>—</td><td>Responsible</td><td>Responsibility, freedom</td></tr>
+          <tr><td>Global &amp; civic engagement</td><td>Open-minded, caring, balanced</td><td>—</td><td>Engaged</td><td>Community involvement</td></tr>
+        </table>
+        <p>
+          This produced seven recurring constructs, later paired with equivalent
+          global citizenship themes based on PISA's global competence framework,
+          which the overall survey design draws on.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="label">Instrument design<span class="micro">From constructs to items</span></p>
+      <div class="content">
+        <h2>A questionnaire built around three pillars, with language as the thread</h2>
+        <p>
+          Rather than treating bilingual education as only a language intervention,
+          I took a pedagogic and ecological view, following Coyle (2018), treating
+          language as a tool that mediates learning, personal development, and
+          global citizenship rather than a separate outcome. Each questionnaire
+          item was written to reflect a personal development or global citizenship
+          construct specifically through its linguistic expression.
+        </p>
+        <div class="pillar-row">
+          <div class="pillar"><b>Language</b> &middot; critical/reflective, communicative, creative, ethical, confidence</div>
+          <div class="pillar"><b>Personal Development</b> &middot; reflective, collaborative, creative, responsible, resilient, balanced</div>
+          <div class="pillar"><b>Global Citizenship</b> &middot; self-efficacy, perspective-taking, intercultural communication, global mindedness</div>
+        </div>
+        <h3>Development process</h3>
         <ul>
-          <li>Piloted the instrument before full deployment to catch reliability issues early</li>
-          <li>Used power simulations, not guesswork, to size the study properly</li>
-          <li>Stratified sampling to avoid over-representing any one type of school</li>
+          <li>Initial orientation and research question formulation</li>
+          <li>Exploratory analysis of school policy documents and construct definitions</li>
+          <li>Methodology design and questionnaire construction, followed by ethical approval</li>
+          <li>Small-scale comprehension testing with a vulnerable target group</li>
+          <li>Larger-scale pilot study to evaluate the questionnaire itself</li>
+          <li>Revision based on pilot feedback, then translation and finalisation</li>
         </ul>
-      </div>
-    </section>
-
-    <section class="section">
-      <p class="label">Analysis<span class="micro">Making sense of it</span></p>
-      <div class="content">
-        <h2>Multilevel modelling across schools and groups</h2>
         <p>
-          Because students are nested within schools, a standard regression approach
-          would understate uncertainty and risk misleading conclusions. I applied
-          multilevel modelling, alongside t-tests and ANOVA where appropriate, to
-          properly account for school-level clustering and identify genuine
-          differences in outcomes.
+          Early comprehension testing with a vulnerable population surfaced real
+          issues: several items were double-barrelled, used overly formal language,
+          or assumed an academic register not appropriate for all tracks (e.g.
+          vmbo). Items were rewritten in plainer, more concrete language, often
+          grounding abstract constructs in specific scenarios (a group project, a
+          classroom discussion) rather than asking about the construct directly.
         </p>
       </div>
     </section>
 
     <section class="section">
-      <p class="label">Outcome<span class="micro">What it produced</span></p>
+      <p class="label">Pilot analysis<span class="micro">Testing the instrument</span></p>
       <div class="content">
-        <h2>Findings stakeholders could actually use</h2>
+        <h2>Checking the questionnaire works before using it at scale</h2>
+        <div class="data-note">
+          Pilot n = 69. For this public portfolio, the underlying participant-level
+          data has been replaced with a synthetic dataset matching the same
+          analytical structure, confidential research data is not reproduced here.
+          The statistics below reflect that synthetic reproduction of the real
+          analysis workflow.
+        </div>
         <p>
-          I built dashboards and visual reports (Power BI, Canva) to translate the
-          statistical findings into recommendations for teachers, school coordinators,
-          and policymakers, communicating not just results but the methodological
-          assumptions and limitations behind them, so stakeholders knew exactly how
-          much weight the findings could bear.
+          I ran a pilot study to check whether the three proposed scales,
+          Language, Personal Development, and Global Citizenship, held together
+          statistically before committing to the full questionnaire. I used
+          Cronbach's alpha and item-drop diagnostics to assess internal
+          consistency, and item-level t-tests with Benjamini-Hochberg correction
+          to check for differences between TTO and non-TTO comparison groups,
+          guarding against false positives across 34 separate item-level tests.
+        </p>
+
+        <div class="figure-block">
+          <img src="edu-alpha-chart.png" alt="Bar chart showing Cronbach's alpha reliability for three questionnaire scales: Personal Development 0.91, Language 0.94, Global Citizenship 0.88">
+          <p class="figure-caption">
+            All three scales showed strong internal consistency, well above the
+            conventional 0.70 threshold, indicating items within each scale were
+            measuring a coherent underlying construct.
+          </p>
+        </div>
+
+        <div class="figure-block">
+          <img src="edu-pvalue-chart.png" alt="Bar chart showing raw and Benjamini-Hochberg adjusted p-values for the ten questionnaire items with the strongest group differences">
+          <p class="figure-caption">
+            Two items (Q27, Q8) showed a significant raw group difference, both
+            language-related items. After correcting for 34 simultaneous
+            comparisons, neither survived at the conventional 0.05 threshold,
+            an expected and honest result at this pilot sample size, and a
+            reminder not to over-interpret small-sample exploratory comparisons.
+          </p>
+        </div>
+
+        <h3>What the pilot changed</h3>
+        <p>
+          Item-drop diagnostics confirmed no single item was dragging down scale
+          reliability badly enough to warrant removal, though a few items with
+          comparatively lower item-total correlations were flagged for review
+          before the main study. The correlation structure between items also
+          confirmed the three-pillar grouping largely held together as intended.
         </p>
       </div>
     </section>
 
     <section class="section reflection">
-      <p class="label">Reflection<span class="micro">What I'd do differently</span></p>
+      <p class="label">Reflection<span class="micro">Limitations</span></p>
       <div class="content">
         <h2>Honest limitations</h2>
         <p>
-          Self-reported measures of confidence and personal development are useful but
-          imperfect proxies, they capture perception, not always behaviour. A stronger
-          design would pair the survey with some direct behavioural or performance
-          measures to triangulate the self-report data, something I would build into
-          a future iteration of this study.
+          A pilot sample of 69 has limited power to detect anything but fairly
+          large group differences, so the absence of significant group effects
+          after correction should not be read as evidence of no difference,
+          only that this pilot could not confidently detect one. The main study,
+          now underway across 20+ schools with stratified sampling, is designed
+          to address this directly.
         </p>
       </div>
     </section>
