@@ -252,7 +252,7 @@
     </nav>
 
     <header class="hero">
-      <p class="eyebrow">Project 03 · Psychometrics &amp; Machine Learning · MSc Thesis, Utrecht University</p>
+      <p class="eyebrow">Project 03 · Psychometrics &amp; Machine Learning </p>
       <h1>Detecting item parameter drift in large-scale assessments</h1>
       <p class="dek">
         A comparison of traditional IRT-based detection against machine learning
@@ -260,10 +260,7 @@
         phenomenon where a test item's behaviour changes between assessment cycles,
         threatening the fairness and comparability of large-scale assessments like PISA.
       </p>
-      <div class="tags">
-        <span>IRT</span><span>Item parameter drift</span><span>Neural networks</span>
-        <span>XGBoost</span><span>Simulation study</span><span>R</span>
-      </div>
+    
       <a class="github-link" href="https://github.com/bagociutemonika/Do-assessment-items-change-over-time-" target="_blank" rel="noreferrer">
         View full code and reproducible pipeline on GitHub <span style="color: var(--accent);">→</span>
       </a>
@@ -272,7 +269,7 @@
     <section class="section">
       <p class="label">Background<span class="micro">Why this matters</span></p>
       <div class="content">
-        <h2>When a test item stops measuring the same thing, fairly</h2>
+        <h2>When a test item stops measuring the same thing</h2>
         <p>
           Large-scale assessments, like PISA, are only meaningful if their items behave
           consistently across time and across groups of test-takers. When an item's
@@ -346,12 +343,7 @@
           <span class="step">ML detection (NN &amp; XGBoost)</span><span class="sep">→</span>
           <span class="step">Compare sensitivity &amp; specificity</span>
         </div>
-        <p>
-          The ML pipeline used ability estimates and administration information as
-          features, deliberately keeping it comparably simple to the information
-          available to the IRT method, so the comparison was fair rather than giving
-          either method an informational advantage.
-        </p>
+  
       </div>
     </section>
 
@@ -401,30 +393,14 @@
 
         <h3>What this means</h3>
         <p>
-          Machine learning did not outperform the established method here, and that
-          is itself a meaningful finding. Subtle drift is also the drift most likely
-          to go unnoticed and accumulate unfair impact over time, which is exactly
-          where the traditional IRT-based Wald test proved most reliable. Machine
-          learning methods only became competitive once the drift was already large
-          enough that most methods, including the simplest, would catch it anyway.
+          Machine learning did not outperform the established method here, and that is itself a meaningful finding. By design, this points more toward 
+          a bottleneck effect, and the recommendation going forward is to implement 
+          ML at the parameter estimation stage rather than for correcting parameters afterward.
         </p>
       </div>
     </section>
 
-    <section class="section reflection">
-      <p class="label">Reflection<span class="micro">Limitations</span></p>
-      <div class="content">
-        <h2>Honest limitations</h2>
-        <p>
-          This is simulated data, built to resemble realistic assessment structures
-          but not drawn from an actual operational assessment. The ML models also
-          used a deliberately simple feature set (ability estimates and
-          administration information) to keep the comparison fair; a more elaborate
-          feature engineering approach might change how competitive the ML methods
-          are, a natural next step for this line of work.
-        </p>
-      </div>
-    </section>
+
 
     <div class="nextproj">
       <a class="text-link" href="project-education.html"><span class="arrow back-arrow">→</span> Previous project</a>
