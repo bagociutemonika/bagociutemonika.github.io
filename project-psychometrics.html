@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#171715">
-  <meta name="description" content="Case study: Detecting item drift in large-scale assessments — Monika Bagociuté.">
-  <title>Detecting Item Drift in Large-Scale Assessments — Monika Bagociuté</title>
+  <meta name="description" content="Case study: Detecting item parameter drift in large-scale assessments — Monika Bagociuté.">
+  <title>Detecting Item Parameter Drift — Monika Bagociuté</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +37,8 @@
     a { color: inherit; }
     :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
+    img { display: block; max-width: 100%; height: auto; }
+
     .site {
       max-width: var(--page-width);
       margin: 0 auto;
@@ -45,7 +47,7 @@
       box-shadow: 0 24px 80px rgba(0,0,0,.18);
     }
 
-    .brand, .eyebrow, .micro, .text-link, .tags span {
+    .brand, .eyebrow, .micro, .text-link, .tags span, .kpi span {
       text-transform: uppercase;
       letter-spacing: .16em;
       font-size: 10px;
@@ -86,15 +88,15 @@
     .hero h1 {
       margin: 0;
       font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(36px, 6vw, 64px);
-      line-height: 1.05;
+      font-size: clamp(32px, 5.5vw, 56px);
+      line-height: 1.08;
       letter-spacing: -.03em;
       font-weight: 400;
       max-width: 820px;
     }
 
     .hero .dek {
-      max-width: 640px;
+      max-width: 660px;
       margin: 24px 0 0;
       font: 400 16px/1.8 "Playfair Display", Georgia, serif;
       color: #383831;
@@ -102,6 +104,20 @@
 
     .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 26px; }
     .tags span { border: 1px solid var(--line); padding: 7px 10px; }
+
+    .github-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 24px;
+      padding: 10px 16px;
+      border: 1.5px solid var(--ink);
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .github-link:hover { background: var(--paper-deep); }
 
     .section {
       padding: 36px 34px;
@@ -116,13 +132,23 @@
 
     .section .content h2 {
       margin: 0 0 16px;
-      font: 400 clamp(24px, 3vw, 32px)/1.1 "Playfair Display", Georgia, serif;
+      font: 400 clamp(22px, 2.8vw, 30px)/1.15 "Playfair Display", Georgia, serif;
       letter-spacing: -.03em;
     }
 
+    .section .content h3 {
+      margin: 22px 0 8px;
+      font: 500 12px/1 "DM Sans", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+    }
+
+    .section .content h3:first-of-type { margin-top: 0; }
+
     .section .content p {
       margin: 0 0 16px;
-      max-width: 620px;
+      max-width: 640px;
       font: 400 15px/1.8 "Playfair Display", Georgia, serif;
       color: #383831;
     }
@@ -130,12 +156,75 @@
     .section .content ul {
       margin: 0 0 16px;
       padding-left: 20px;
-      max-width: 620px;
+      max-width: 640px;
       font: 400 15px/1.8 "Playfair Display", Georgia, serif;
       color: #383831;
     }
 
-    .section .content li { margin-bottom: 8px; }
+    .section .content li { margin-bottom: 6px; }
+
+    .kpi-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .kpi { border: 1px solid var(--line); padding: 8px 12px; font-size: 11px; letter-spacing: .04em; }
+
+    .design-table {
+      width: 100%;
+      max-width: 700px;
+      border-collapse: collapse;
+      margin: 0 0 20px;
+      font-size: 13px;
+    }
+    .design-table th, .design-table td {
+      text-align: left;
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .design-table th {
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .workflow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 20px;
+      max-width: 660px;
+    }
+    .workflow .step {
+      border: 1px solid var(--line);
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+    .workflow .sep { color: var(--muted); font-size: 14px; }
+
+    .figure-block {
+      margin: 0 0 28px;
+      max-width: 700px;
+    }
+    .figure-block img {
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    .figure-caption {
+      margin-top: 10px;
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    .finding-box {
+      background: var(--paper-deep);
+      border-left: 2px solid var(--accent);
+      padding: 16px 18px;
+      margin: 0 0 20px;
+      max-width: 620px;
+    }
+    .finding-box p { margin: 0; }
 
     .reflection { background: var(--paper-deep); }
 
@@ -150,6 +239,7 @@
     @media (max-width: 700px) {
       .section { grid-template-columns: 1fr; gap: 14px; }
       .nextproj { flex-direction: column; align-items: flex-start; }
+      .design-table { font-size: 12px; }
     }
   </style>
 </head>
@@ -162,93 +252,176 @@
     </nav>
 
     <header class="hero">
-      <p class="eyebrow">Project 03 · Psychometrics &amp; Machine Learning · 2025 – 2026</p>
-      <h1>Detecting item drift in large-scale assessments</h1>
+      <p class="eyebrow">Project 03 · Psychometrics &amp; Machine Learning · MSc Thesis, Utrecht University</p>
+      <h1>Detecting item parameter drift in large-scale assessments</h1>
       <p class="dek">
-        As Data Analyst Intern at CITO, I built a simulation study modelled on
-        PISA-style assessments to test whether machine learning can reliably
-        detect bias in test items, benchmarked against traditional statistical
-        methods.
+        A comparison of traditional IRT-based detection against machine learning
+        (neural networks and XGBoost) for identifying item parameter drift, the
+        phenomenon where a test item's behaviour changes between assessment cycles,
+        threatening the fairness and comparability of large-scale assessments like PISA.
       </p>
       <div class="tags">
-        <span>IRT</span><span>DIF</span><span>Simulation</span>
-        <span>Machine learning</span><span>Logistic regression</span>
+        <span>IRT</span><span>Item parameter drift</span><span>Neural networks</span>
+        <span>XGBoost</span><span>Simulation study</span><span>R</span>
       </div>
+      <a class="github-link" href="https://github.com/bagociutemonika/Do-assessment-items-change-over-time-" target="_blank" rel="noreferrer">
+        View full code and reproducible pipeline on GitHub <span style="color: var(--accent);">→</span>
+      </a>
     </header>
 
     <section class="section">
-      <p class="label">Context<span class="micro">The question</span></p>
+      <p class="label">Background<span class="micro">Why this matters</span></p>
       <div class="content">
-        <h2>Can machine learning detect unfair test items as reliably as traditional methods?</h2>
+        <h2>When a test item stops measuring the same thing, fairly</h2>
         <p>
-          Large-scale assessments need every test item to measure the same thing,
-          fairly, for every test-taker. When an item behaves differently for
-          otherwise similar test-takers, this is called differential item
-          functioning (DIF), and it threatens the validity of the whole assessment.
-          Traditional detection methods work, but are often slow at scale. The
-          question was whether machine learning could match or improve on their
-          accuracy.
+          Large-scale assessments, like PISA, are only meaningful if their items behave
+          consistently across time and across groups of test-takers. When an item's
+          statistical properties shift between assessment cycles, item parameter drift
+          (IPD), comparisons across years become unreliable, even if no one changed the
+          item's wording. Detecting this drift reliably matters for the validity of
+          every trend reported from these assessments.
+        </p>
+        <p>
+          The traditional detection method, a Wald test built on item response theory
+          (IRT), works well but has known limitations. Machine learning methods are
+          increasingly proposed as an alternative or complement. This thesis tests
+          that proposal directly, under conditions realistic enough to matter.
         </p>
       </div>
     </section>
 
     <section class="section">
-      <p class="label">Method<span class="micro">How I approached it</span></p>
+      <p class="label">Research question<span class="micro">What I set out to answer</span></p>
       <div class="content">
-        <h2>Simulating assessments with known, controlled flaws</h2>
+        <h2>Can machine learning match traditional IRT-based detection?</h2>
         <p>
-          I designed a simulation study imitating the structure of large-scale
-          international assessments, generating data under Rasch and 2PL item
-          response models. I then deliberately introduced controlled violations of
-          unidimensionality and injected differential item functioning into specific
-          items, creating a dataset where I knew exactly which items were flawed and
-          how, the ground truth needed to properly evaluate any detection method.
+          Specifically: how do neural networks and XGBoost compare to the IRT-based
+          Wald test in sensitivity, specificity, and robustness, across varying drift
+          magnitude, drift proportion, drift type, and increasingly realistic and
+          complex assessment structures, including multidimensionality and
+          multi-country data?
         </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="label">Methods<span class="micro">Simulation design</span></p>
+      <div class="content">
+        <h2>99 simulated datasets, five levels of complexity</h2>
+        <p>
+          I simulated assessment data under progressively more realistic conditions,
+          starting from a simple single-group Rasch model and building up to a
+          multidimensional, multi-country 2PL design, closer to how an assessment
+          like PISA actually operates.
+        </p>
+
+        <h3>Assessment design</h3>
         <ul>
-          <li>Simulated data under two different IRT models for robustness</li>
-          <li>Injected known DIF and unidimensionality violations as ground truth</li>
-          <li>Varied conditions systematically to stress-test detection methods</li>
+          <li>75 items: 15 anchor items shared across all booklets, 60 non-anchor items</li>
+          <li>4 booklets, each with all anchor items plus 15 unique non-anchor items</li>
+          <li>Two assessment cycles (2015 and 2018), 2,000 respondents per country per cycle</li>
         </ul>
-      </div>
-    </section>
 
-    <section class="section">
-      <p class="label">Analysis<span class="micro">Benchmarking methods</span></p>
-      <div class="content">
-        <h2>Machine learning versus logistic regression</h2>
+        <h3>Simulation conditions</h3>
+        <table class="design-table">
+          <tr><th>Sim</th><th>Model</th><th>Multidimensional</th><th>Multi-country</th><th>Drift types</th></tr>
+          <tr><td>1.1</td><td>Rasch</td><td>No</td><td>No</td><td>b-shift</td></tr>
+          <tr><td>1.2</td><td>Rasch</td><td>Yes</td><td>No</td><td>b-shift</td></tr>
+          <tr><td>2.1</td><td>2PL</td><td>No</td><td>No</td><td>a-, b-, ab-shift</td></tr>
+          <tr><td>2.2</td><td>2PL</td><td>Yes</td><td>No</td><td>a-, b-, ab-shift</td></tr>
+          <tr><td>2.3</td><td>2PL</td><td>Yes</td><td>Yes (3 countries)</td><td>a-, b-, ab-shift</td></tr>
+        </table>
+
+        <h3>Drift conditions tested</h3>
+        <div class="kpi-row">
+          <span class="kpi">Magnitude: 0.2, 0.5, 1.0 logits</span>
+          <span class="kpi">Proportion: 10%, 20%, 30% of anchor items</span>
+        </div>
+
+        <h3>Analysis workflow</h3>
+        <div class="workflow">
+          <span class="step">Data generation</span><span class="sep">→</span>
+          <span class="step">Data validation</span><span class="sep">→</span>
+          <span class="step">IRT detection (Wald test)</span><span class="sep">→</span>
+          <span class="step">ML detection (NN &amp; XGBoost)</span><span class="sep">→</span>
+          <span class="step">Compare sensitivity &amp; specificity</span>
+        </div>
         <p>
-          I applied machine learning models and compared their performance directly
-          against logistic regression, the traditional approach, to determine which
-          method detected the known, injected DIF most reliably across varying
-          conditions. This comparative framing mattered: the goal was not to prove
-          machine learning works, but to honestly evaluate whether it outperforms
-          the established method.
+          The ML pipeline used ability estimates and administration information as
+          features, deliberately keeping it comparably simple to the information
+          available to the IRT method, so the comparison was fair rather than giving
+          either method an informational advantage.
         </p>
       </div>
     </section>
 
     <section class="section">
-      <p class="label">Outcome<span class="micro">What it produced</span></p>
+      <p class="label">Results<span class="micro">What the data showed</span></p>
       <div class="content">
-        <h2>A scientific paper on method reliability</h2>
+        <h2>Traditional IRT detection outperformed machine learning for subtle drift</h2>
+
+        <div class="finding-box">
+          <p>
+            Across every simulation condition, the IRT-based Wald test detected small
+            drift (0.2 logits) more reliably than either machine learning method. All
+            methods converged to near-perfect detection once drift became large
+            (1.0 logits), the differences that mattered were concentrated entirely in
+            the harder, more realistic cases.
+          </p>
+        </div>
+
+        <div class="figure-block">
+          <img src="fig-heatmap-rasch.png" alt="Heatmap showing mean sensitivity for IRT, neural network, and XGBoost methods across drift magnitude, for simple Rasch and multidimensional Rasch simulations">
+          <p class="figure-caption">
+            Mean sensitivity for the simplest conditions (Simulations 1.1 and 1.2).
+            At the smallest drift magnitude (0.2 logits), IRT detection (0.67 / 0.33)
+            clearly outperforms the neural network (0.33 / 0.00) and XGBoost (0.19 / 0.00).
+            All methods reach perfect sensitivity once drift reaches 0.5 logits or more.
+          </p>
+        </div>
+
+        <div class="figure-block">
+          <img src="fig-2pl-heatmap.png" alt="Grid of heatmaps showing mean sensitivity across three drift types (a-shift, b-shift, ab-shift) and three simulation conditions of increasing complexity">
+          <p class="figure-caption">
+            The same pattern holds under more realistic, complex conditions (2PL
+            model, multidimensionality, multiple countries), across all three drift
+            types. IRT methods consistently lead at low drift magnitude; the gap
+            narrows as drift magnitude increases.
+          </p>
+        </div>
+
+        <div class="figure-block">
+          <img src="fig-sensitivity-by-drift-type.png" alt="Line chart comparing mean sensitivity across drift magnitude for six detection methods, split by drift type">
+          <p class="figure-caption">
+            A clearer view of the same result: IRT methods (green) sit consistently
+            above the machine learning methods (blue, red) at low drift magnitude,
+            across all three drift types, before the lines converge at magnitude 1.0.
+          </p>
+        </div>
+
+        <h3>What this means</h3>
         <p>
-          I communicated the findings and methodological trade-offs in a scientific
-          paper, documenting not just which method performed better, but under which
-          conditions, and why, information that matters for anyone deciding which
-          method to trust in practice.
+          Machine learning did not outperform the established method here, and that
+          is itself a meaningful finding. Subtle drift is also the drift most likely
+          to go unnoticed and accumulate unfair impact over time, which is exactly
+          where the traditional IRT-based Wald test proved most reliable. Machine
+          learning methods only became competitive once the drift was already large
+          enough that most methods, including the simplest, would catch it anyway.
         </p>
       </div>
     </section>
 
     <section class="section reflection">
-      <p class="label">Reflection<span class="micro">What I'd do differently</span></p>
+      <p class="label">Reflection<span class="micro">Limitations</span></p>
       <div class="content">
         <h2>Honest limitations</h2>
         <p>
-          Simulated data, however carefully constructed, is not real-world data. The
-          next step would be validating these findings against a real assessment
-          dataset, where noise, missingness, and unmodelled complexity could behave
-          differently than in a clean simulation.
+          This is simulated data, built to resemble realistic assessment structures
+          but not drawn from an actual operational assessment. The ML models also
+          used a deliberately simple feature set (ability estimates and
+          administration information) to keep the comparison fair; a more elaborate
+          feature engineering approach might change how competitive the ML methods
+          are, a natural next step for this line of work.
         </p>
       </div>
     </section>
